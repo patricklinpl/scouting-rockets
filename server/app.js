@@ -9,17 +9,17 @@ app.disable('x-powered-by')
 
 app.use(logger('dev', { skip: () => app.get('env') === 'test' }))
 
-// Parse JSON Objects
+/** Parse JSON Objects */
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// Serve static assets
+/** Serve static assets */
 app.use(express.static(path.resolve(__dirname, '..', 'public/build')))
 
-// Routes
+/** Routes */
 app.use('/', routes)
 
-// Always return the main index.html, so react-router render the route in the client
+/** Always return the main index.html, so react-router can render the route in the client */
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'public/build', 'index.html'))
 })

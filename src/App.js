@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Games from './components/Games'
-import Assign from './components/Assign'
+import Games from './containers/Games'
+import Assign from './containers/Assign'
 import './App.css'
 
+/** React Router handles endpoints and routes to the target component */
 export default class App extends Component {
   render () {
     return (
