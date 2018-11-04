@@ -14,19 +14,22 @@
     "build-react": "rm -rf public/build && react-scripts build && mv build public",
     "clean": "rimraf dist"
   },
+  "proxy": "http://localhost:8080",
   "dependencies": {
+    "@material-ui/core": "^3.3.2",
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "material-ui": "^0.20.2",
     "morgan": "^1.9.0",
     "multer": "^1.3.0",
     "prop-types": "^15.6.2",
+    "query-string": "^6.2.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.1",
     "rimraf": "^2.6.2"
   },
