@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import TableCell from '@material-ui/core/TableCell'
 import TableRow from '@material-ui/core/TableRow'
+import Button from '@material-ui/core/Button'
 import Tables from '../components/Tables'
 import Header from '../components/Header'
 import Load from '../components/Load'
@@ -51,7 +53,15 @@ export default class Games extends Component {
         <TableCell>@</TableCell>
         <TableCell>{row.homeTeam.fullName}</TableCell>
         <TableCell>{row.homeTeam.city}</TableCell>
-        <TableCell>{row.id}</TableCell>
+        <TableCell>
+          <Button
+            variant='contained'
+            color='primary'
+            component={Link}
+            to={`/assignment/${row.id}`} >
+            View
+          </Button>
+        </TableCell>
       </TableRow>
     ))
   }
