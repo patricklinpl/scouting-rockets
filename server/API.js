@@ -23,4 +23,19 @@ const getGames = async () => {
   }
 }
 
-export {getGames}
+/**
+ * Get the scouting assignemnts for a game from REST API.
+ * @param {number} id A unique ID representing a game. 
+ * @return {Object} An object containing a list of scouting assignments.
+ */
+const getAssignments = async (id) => {
+  try {
+    const response = await instance.get(`games/${id}`)
+    console.log(response)
+    return response.data
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export {getGames, getAssignments}
