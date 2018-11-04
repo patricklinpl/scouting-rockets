@@ -6,7 +6,6 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "prestart": "npm run -s build",
     "start": "npm run build-react && node dist/index.js",
     "build": "npm run clean && shx mkdir -p dist && babel server -s -D -d dist",
     "prod": "npm run build-react && npm run build",
