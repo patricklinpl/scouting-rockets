@@ -36,11 +36,9 @@ Just go on [official Node.js website](http://nodejs.org/) & grab the installer.
 
 ## 🚧 Development
 
-```bash
     $ git clone https://github.com/patricklinpl/scouting-rockets.git
     $ cd scouting-rockets
     $ npm install
     $ cp .example.env .env
     $ vi .env # fill out environment variables
     $ npm start
-```
