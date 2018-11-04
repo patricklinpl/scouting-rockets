@@ -10,7 +10,7 @@ routes.get('/api/games', async (req, res) => (
 
 /** Endpoint to get an NBA game's assignments */
 routes.get('/api/games/:id', async (req, res) => (
-  res.status(200).send({ 'data': await getAssignments(1) })
+  res.status(200).send({ 'assigns': await getAssignments(req.params.id) })
 ))
 
 export default routes
