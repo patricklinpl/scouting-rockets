@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button'
 import Tables from '../components/Tables'
 import Header from '../components/Header'
 import Load from '../components/Load'
-import {getGames} from '../utils/restHandler'
+import { getGames } from '../utils/restHandler'
 
 export default class Games extends Component {
   constructor (props) {
@@ -58,7 +58,10 @@ export default class Games extends Component {
             variant='contained'
             color='primary'
             component={Link}
-            to={`/assignment/${row.id}`} >
+            to={{
+              pathname: `/assignment/`,
+              id: `${row.id}`
+            }}>
             View
           </Button>
         </TableCell>

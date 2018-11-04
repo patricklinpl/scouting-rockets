@@ -13,4 +13,17 @@ const getGames = async () => {
   }
 }
 
-export { getGames }
+/**
+ * Get the game assignments from custom end point.
+ * @return {object} The list of game assignments from a game.
+ */
+const getAssignments = async (id) => {
+  try {
+    const response = await axios.get(`${window.location.origin.toString()}/api/games/${id}`)
+    return response.data
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export { getGames, getAssignments }
