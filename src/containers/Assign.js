@@ -80,9 +80,9 @@ export default class Assign extends Component {
    * Add new scout and update the table
    * @param {string} scoutId A unique ID representing a scout.
    */
-  addAScout (scoutid) {
-    addScouts(this.state.gameID, scoutid)
-    this.requestAssignmentData()
+  async addAScout (scoutid) {
+    await addScouts(this.state.gameID, scoutid)
+    await this.requestAssignmentData()
     this.setState({ open: false }, this.forceUpdate())
   }
 
