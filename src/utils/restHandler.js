@@ -22,7 +22,7 @@ const getGames = async () => {
  */
 const getAssignments = async (id) => {
   try {
-    const response = await axios.get(`${window.location.origin.toString()}/api/games/${id}`)
+    const response = await axios.get(`${window.location.origin.toString()}/rockets/api/games/${id}`)
     return response.data.assigns
   } catch (error) {
     console.error(error)
