@@ -1,5 +1,6 @@
 {
   "name": "scouting-rockets",
+  "homepage": "http://localhost:8080/rockets",
   "version": "0.1.0",
   "description": "Simple website that handles scouting assignments for NBA games",
   "author": "Patrick Lin <patrick@patricklin.ca>",
