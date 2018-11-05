@@ -8,7 +8,7 @@ import './App.css'
 export default class App extends Component {
   render () {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename='/rockets'>
         <div className='App'>
           <Switch>
             <Route exact path='/' component={Games} />
