@@ -14,10 +14,10 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 /** Serve static assets */
-app.use(express.static(path.resolve(__dirname, '..', 'public/build')))
+app.use('/rockets', express.static(path.resolve(__dirname, '..', 'public/build')))
 
 /** Routes */
-app.use('/', routes)
+app.use('/rockets', routes)
 
 /** Always return the main index.html, so react-router can render the route in the client */
 app.get('*', (req, res) => {
