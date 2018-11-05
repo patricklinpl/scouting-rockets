@@ -37,7 +37,7 @@ const getAssignments = async (id) => {
 const addScouts = async (gameId, scoutId) => {
   const requestBody = qs.stringify({ gameId: `${gameId}`, scoutId: `${scoutId}` })
   try {
-    await axios.post(`/api/assignments`, requestBody)
+    await axios.post(`${window.location.origin.toString()}/rockets/api/assignments`, requestBody)
   } catch (error) {
     console.error(error)
   }
