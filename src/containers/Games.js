@@ -14,8 +14,6 @@ export default class Games extends Component {
     this.state = {
       games: []
     }
-    this.mapGameHeaders.bind(this)
-    this.mapGameRows.bind(this)
   }
 
   /** Fetch the list of games on first mount */

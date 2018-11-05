@@ -1,4 +1,7 @@
 import axios from 'axios'
+import qs from 'qs'
+
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 /**
  * Get the games from custom end point.
@@ -26,4 +29,18 @@ const getAssignments = async (id) => {
   }
 }
 
-export { getGames, getAssignments }
+/**
+ * Assign a scout to a game.
+ * @param {string} gameId A unique ID representing a game.
+ * @param {string} scoutId A unique ID representing a scout.
+ */
+const addScouts = async (gameId, scoutId) => {
+  const requestBody = qs.stringify({ gameId: `${gameId}`, scoutId: `${scoutId}` })
+  try {
+    await axios.post(`/api/assignments`, requestBody)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export { getGames, getAssignments, addScouts }

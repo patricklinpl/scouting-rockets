@@ -1,5 +1,8 @@
 import axios from 'axios'
+import qs from 'qs'
 require('dotenv').config()
+
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 /** Instance of axios with custom config */
 const instance = axios.create({
@@ -25,7 +28,7 @@ const getGames = async () => {
 
 /**
  * Get the scouting assignemnts for a game from REST API.
- * @param {number} id A unique ID representing a game.
+ * @param {string} id A unique ID representing a game.
  * @return {Object} An object containing a list of scouting assignments.
  */
 const getAssignments = async (id) => {
@@ -37,4 +40,22 @@ const getAssignments = async (id) => {
   }
 }
 
-export {getGames, getAssignments}
+/**
+ * Add a scout to a game from REST API.
+ * @param {string} gameId A unique ID representing a game.
+ * @param {string} scoutId A unique ID representing a scout.
+ * @return {Object} An object containing a list of scouting assignments and game info.
+ */
+const addScout = async (gameId, scoutId) => {
+  const requestBody = qs.stringify({ gameId: `${gameId}`, scoutId: `${scoutId}` })
+  try {
+    const response = await instance.post(`assignments`, requestBody)
+    return response.data
+  } catch (error) {
+    const err = error.response.data
+    console.error(err)
+    return err
+  }
+}
+
+export {getGames, getAssignments, addScout}
