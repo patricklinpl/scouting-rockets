@@ -35,14 +35,16 @@ export default class Assign extends Component {
   /** Get latest game data and scout data */
   async requestAssignmentData () {
     const gameId = this.props.location.id
-    const response = await getAssignments(gameId)
-    this.setState({
-      gameID: gameId,
-      gameDate: response.gameDate.split('T')[0],
-      gameData: `${response.awayTeam.name} @ ${response.homeTeam.name}`,
-      noAssignment: response.assignments.length === 0,
-      assignment: response.assignments
-    })
+    if (gameId) {
+      const response = await getAssignments(gameId)
+      this.setState({
+        gameID: gameId,
+        gameDate: response.gameDate.split('T')[0],
+        gameData: `${response.awayTeam.name} @ ${response.homeTeam.name}`,
+        noAssignment: response.assignments.length === 0,
+        assignment: response.assignments
+      })
+    }
   }
 
   /**
